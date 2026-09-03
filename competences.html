@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compétences — Khalil Bendref</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .comp-hero {
+      padding: 8rem 3rem 3rem;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .comp-hero .ph-breadcrumb {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-muted); margin-bottom: 2rem;
+    }
+    .comp-hero .ph-breadcrumb a { color: var(--text-muted); transition: color 0.2s; }
+    .comp-hero .ph-breadcrumb a:hover { color: var(--accent); }
+    .comp-hero-label {
+      font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--accent); letter-spacing: 0.1em;
+      margin-bottom: 0.75rem; display: block;
+    }
+    .comp-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+    }
+    .comp-hero p {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      max-width: 720px;
+      line-height: 1.8;
+    }
+    .comp-list-wrap {
+      padding: 4rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .comp-stats {
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      margin-bottom: 3rem; padding-bottom: 2rem;
+      border-bottom: 1px dashed var(--border);
+    }
+    .comp-stat { display: flex; flex-direction: column; gap: 0.25rem; }
+    .comp-stat-num {
+      font-family: var(--font-head); font-size: 1.8rem;
+      font-weight: 700; color: var(--accent);
+    }
+    .comp-stat-label {
+      font-family: var(--font-mono); font-size: 0.7rem;
+      color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .comp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .comp-card {
+      position: relative; background: var(--bg-card);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 2rem;
+      overflow: hidden; transition: all 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .comp-card:hover {
+      border-color: var(--accent-dim);
+      background: var(--bg-card-hover);
+    }
+    .comp-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0.5;
+    }
+    .comp-card-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; margin-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px dashed var(--border);
+    }
+    .comp-card-num { display: flex; align-items: baseline; gap: 0.5rem; }
+    .comp-card-num .big {
+      font-family: var(--font-head); font-size: 2.5rem;
+      font-weight: 700; color: var(--accent); line-height: 1;
+    }
+    .comp-card-num .label {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .comp-card-tag {
+      font-family: var(--font-mono); font-size: 0.7rem;
+      color: var(--accent-2); padding: 0.25rem 0.6rem;
+      background: var(--accent-2-dim);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .comp-card-title {
+      font-family: var(--font-head); font-size: 1.1rem;
+      font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.03em; color: var(--text-primary);
+      line-height: 1.3; margin-bottom: 1rem;
+    }
+    .comp-card-desc {
+      font-size: 0.82rem; color: var(--text-secondary);
+      line-height: 1.75; margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .comp-section { margin-bottom: 1.25rem; }
+    .comp-section-label {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 0.6rem; display: block;
+    }
+    .comp-section-label .accent { color: var(--accent); }
+    .comp-list-items {
+      list-style: none; display: flex;
+      flex-direction: column; gap: 0.4rem;
+    }
+    .comp-list-items li {
+      padding-left: 1.25rem; position: relative;
+      font-size: 0.78rem; color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .comp-list-items li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--accent); font-family: var(--font-mono);
+    }
+    .comp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .comp-tag-item {
+      padding: 0.25rem 0.65rem; background: var(--bg-deep);
+      border: 1px solid var(--border); border-radius: 4px;
+      font-family: var(--font-mono); font-size: 0.7rem;
+      color: var(--text-primary); letter-spacing: 0.04em;
+      transition: all 0.2s;
+    }
+    .comp-tag-item:hover { border-color: var(--accent); color: var(--accent); }
+    .comp-projects {
+      margin-top: auto; padding-top: 1.25rem;
+      border-top: 1px dashed var(--border);
+    }
+    .comp-projects-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .comp-project-link {
+      font-family: var(--font-mono); font-size: 0.7rem;
+      color: var(--accent); padding: 0.2rem 0;
+      letter-spacing: 0.04em;
+      border-bottom: 1px dashed transparent;
+      transition: border-color 0.2s;
+    }
+    .comp-project-link:hover { border-bottom-color: var(--accent); }
+    .comp-project-link:not(:last-child)::after {
+      content: ' ·'; color: var(--text-muted); margin-left: 0.5rem;
+    }
+    @media (max-width: 1024px) {
+      .comp-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .comp-hero { padding: 6rem 1.5rem 2rem; }
+      .comp-list-wrap { padding: 2rem 1.5rem; }
+      .comp-card { padding: 1.5rem; }
+      .comp-card-num .big { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="bracket">[</span>
+        <span class="nav-name">KHALIL.BENDREF</span>
+        <span class="bracket">]</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#about"><span class="nav-num">01.</span>À propos</a></li>
+      <li><a href="index.html#projects"><span class="nav-num">02.</span>Projets</a></li>
+      <li><a href="competences.html"><span class="nav-num">03.</span>Compétences</a></li>
+      <li><a href="index.html#contact"><span class="nav-num">04.</span>Contact</a></li>
+    </ul>
+    <a href="index.html" class="btn-ghost btn-sm">← Retour</a>
+  </nav>
+
+  <section class="comp-hero">
+    <div class="ph-breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span> / </span>
+      <span class="accent">Compétences</span>
+    </div>
+    <span class="comp-hero-label">// REFERENTIEL_BUT --list</span>
+    <h1>Compétences du référentiel</h1>
+    <p>
+      Les six compétences officielles du référentiel BUT Informatique, accompagnées des technologies et des projets qui ont permis de les développer durant ma première année à l'IUT2 Grenoble Alpes.
+    </p>
+  </section>
+
+  <main class="comp-list-wrap">
+
+   
+
+    <div class="comp-grid">
+
+      <!-- C1 -->
+      <article class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-card-num">
+            <span class="big">01</span>
+            <span class="label">// dev</span>
+          </div>
+          <span class="comp-card-tag">C1</span>
+        </div>
+        <h2 class="comp-card-title">Réaliser un développement d'application</h2>
+        <p class="comp-card-desc">
+          Développer — c'est-à-dire concevoir, coder, tester et intégrer — une solution informatique pour un client, en respectant ses besoins, en appliquant les principes algorithmiques et en veillant à la qualité du code et de sa documentation.
+        </p>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Composantes essentielles</span>
+          <ul class="comp-list-items">
+            <li>Développer des applications informatiques simples</li>
+            <li>Partir des exigences et aller jusqu'à une application complète</li>
+          </ul>
+        </div>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Technologies maîtrisées</span>
+          <div class="comp-tags">
+            <span class="comp-tag-item">Java</span>
+            <span class="comp-tag-item">HTML / CSS / JS</span>
+            <span class="comp-tag-item">UML</span>
+            <span class="comp-tag-item">POO</span>
+            <span class="comp-tag-item">Tests</span>
+          </div>
+        </div>
+
+        <div class="comp-projects">
+          <span class="comp-section-label"><span class="accent">//</span> Projets liés</span>
+          <div class="comp-projects-list">
+            <a href="index.html#projet-5" class="comp-project-link">Bivouacool</a>
+            <a href="index.html#projet-1" class="comp-project-link">Chatbot culture générale</a>
+            <a href="index.html#projet-2" class="comp-project-link">Site web Hardis</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- C2 -->
+      <article class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-card-num">
+            <span class="big">02</span>
+            <span class="label">// opt</span>
+          </div>
+          <span class="comp-card-tag">C2</span>
+        </div>
+        <h2 class="comp-card-title">Optimiser des applications informatiques</h2>
+        <p class="comp-card-desc">
+          Proposer des applications informatiques optimisées en fonction de critères spécifiques : temps d'exécution, précision, consommation de ressources… En recensant les algorithmes et les structures de données usuels et en s'appuyant sur des schémas de raisonnement.
+        </p>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Composantes essentielles</span>
+          <ul class="comp-list-items">
+            <li>Appréhender et construire des algorithmes</li>
+            <li>Sélectionner les algorithmes adéquats pour répondre à un problème donné</li>
+          </ul>
+        </div>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Technologies maîtrisées</span>
+          <div class="comp-tags">
+            <span class="comp-tag-item">Algorithmie</span>
+            <span class="comp-tag-item">Index</span>
+            <span class="comp-tag-item">Dichotomie</span>
+            <span class="comp-tag-item">Structures de données</span>
+            <span class="comp-tag-item">Java</span>
+          </div>
+        </div>
+
+        <div class="comp-projects">
+          <span class="comp-section-label"><span class="accent">//</span> Projets liés</span>
+          <div class="comp-projects-list">
+            <a href="index.html#projet-1" class="comp-project-link">Chatbot culture générale</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- C3 -->
+      <article class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-card-num">
+            <span class="big">03</span>
+            <span class="label">// sys</span>
+          </div>
+          <span class="comp-card-tag">C3</span>
+        </div>
+        <h2 class="comp-card-title">Administrer des systèmes informatiques communicants</h2>
+        <p class="comp-card-desc">
+          Installer, configurer, mettre à disposition et maintenir en conditions opérationnelles des infrastructures, des services et des réseaux. Sécuriser le système d'information et optimiser le système informatique d'une organisation.
+        </p>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Composantes essentielles</span>
+          <ul class="comp-list-items">
+            <li>Installer et configurer un poste de travail</li>
+            <li>Déployer des services dans une architecture réseau</li>
+          </ul>
+        </div>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Technologies maîtrisées</span>
+          <div class="comp-tags">
+            <span class="comp-tag-item">Debian 13</span>
+            <span class="comp-tag-item">Linux</span>
+            <span class="comp-tag-item">Virtualisation (VM)</span>
+            <span class="comp-tag-item">KDE Plasma</span>
+            <span class="comp-tag-item">Snap / Flatpak</span>
+            <span class="comp-tag-item">Services réseau</span>
+            <span class="comp-tag-item">Git</span>
+          </div>
+        </div>
+
+        <div class="comp-projects">
+          <span class="comp-section-label"><span class="accent">//</span> Projets liés</span>
+          <div class="comp-projects-list">
+            <a href="index.html#projet-4" class="comp-project-link">Installation poste dev</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- C4 -->
+      <article class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-card-num">
+            <span class="big">04</span>
+            <span class="label">// data</span>
+          </div>
+          <span class="comp-card-tag">C4</span>
+        </div>
+        <h2 class="comp-card-title">Gérer des données de l'information</h2>
+        <p class="comp-card-desc">
+          Concevoir, gérer, administrer et exploiter les données de l'entreprise et mettre à disposition toutes les informations pour un bon pilotage. En respectant les réglementations sur la protection des données personnelles et en assurant la cohérence et la qualité.
+        </p>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Composantes essentielles</span>
+          <ul class="comp-list-items">
+            <li>Concevoir et mettre en place une base de données à partir d'un cahier des charges client</li>
+            <li>Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité</li>
+          </ul>
+        </div>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Technologies maîtrisées</span>
+          <div class="comp-tags">
+            <span class="comp-tag-item">PostgreSQL</span>
+            <span class="comp-tag-item">SQL</span>
+            <span class="comp-tag-item">MCD / MLD</span>
+            <span class="comp-tag-item">Contraintes d'intégrité</span>
+            <span class="comp-tag-item">DBeaver</span>
+          </div>
+        </div>
+
+        <div class="comp-projects">
+          <span class="comp-section-label"><span class="accent">//</span> Projets liés</span>
+          <div class="comp-projects-list">
+            <a href="index.html#projet-3" class="comp-project-link">BDD Le Tourmentin</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- C5 -->
+      <article class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-card-num">
+            <span class="big">05</span>
+            <span class="label">// mgmt</span>
+          </div>
+          <span class="comp-card-tag">C5</span>
+        </div>
+        <h2 class="comp-card-title">Conduire un projet</h2>
+        <p class="comp-card-desc">
+          Satisfaire les besoins des utilisateurs au regard de la chaîne de valeur du client, organiser et piloter un projet informatique avec des méthodes classiques ou agiles. En communiquant efficacement avec les différents acteurs du projet.
+        </p>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Composantes essentielles</span>
+          <ul class="comp-list-items">
+            <li>Identifier les besoins métiers des clients et des utilisateurs</li>
+            <li>Appliquer une démarche de suivi de projet en fonction des besoins</li>
+          </ul>
+        </div>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Technologies maîtrisées</span>
+          <div class="comp-tags">
+            <span class="comp-tag-item">Gestion de projet</span>
+            <span class="comp-tag-item">Recueil de besoins</span>
+            <span class="comp-tag-item">Maquette</span>
+            <span class="comp-tag-item">Documentation</span>
+            <span class="comp-tag-item">Planification</span>
+          </div>
+        </div>
+
+        <div class="comp-projects">
+          <span class="comp-section-label"><span class="accent">//</span> Projets liés</span>
+          <div class="comp-projects-list">
+            <a href="index.html#projet-2" class="comp-project-link">Site web Hardis</a>
+            <a href="index.html#projet-5" class="comp-project-link">Bivouacool</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- C6 -->
+      <article class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-card-num">
+            <span class="big">06</span>
+            <span class="label">// team</span>
+          </div>
+          <span class="comp-card-tag">C6</span>
+        </div>
+        <h2 class="comp-card-title">Travailler dans une équipe informatique</h2>
+        <p class="comp-card-desc">
+          Acquérir, développer et exploiter les aptitudes nécessaires pour travailler efficacement dans une équipe informatique. En inscrivant sa démarche au sein d'une équipe pluridisciplinaire et en développant une communication efficace et collaborative.
+        </p>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Composantes essentielles</span>
+          <ul class="comp-list-items">
+            <li>Identifier ses aptitudes pour travailler dans une équipe</li>
+            <li>Situer son rôle et ses missions au sein d'une équipe informatique</li>
+          </ul>
+        </div>
+
+        <div class="comp-section">
+          <span class="comp-section-label"><span class="accent">//</span> Technologies maîtrisées</span>
+          <div class="comp-tags">
+            <span class="comp-tag-item">Travail en équipe</span>
+            <span class="comp-tag-item">Git / GitHub</span>
+            <span class="comp-tag-item">Communication</span>
+            <span class="comp-tag-item">Répartition des tâches</span>
+          </div>
+        </div>
+
+        <div class="comp-projects">
+          <span class="comp-section-label"><span class="accent">//</span> Projets liés</span>
+          <div class="comp-projects-list">
+            <a href="index.html#projet-2" class="comp-project-link">Site web Hardis</a>
+            <a href="index.html#projet-5" class="comp-project-link">Bivouacool</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-copy">© 2025 Khalil Bendref — Tous droits réservés</span>
+      <span class="footer-built">Conçu &amp; développé par Khalil Bendref</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

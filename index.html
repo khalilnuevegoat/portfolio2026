@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Khalil Bendref</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+<nav class="navbar">
+  <div class="nav-logo">
+    <span class="bracket">[</span>
+    <span class="nav-name">KHALIL BENDREF</span>
+    <span class="bracket">]</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about"><span class="nav-num">01.</span>À propos</a></li>
+    <li><a href="#projects"><span class="nav-num">02.</span>Projets</a></li>
+    <li><a href="competences.html"><span class="nav-num">03.</span>Compétences</a></li>
+    <li><a href="#contact"><span class="nav-num">04.</span>Contact</a></li>
+  </ul>
+  <div class="nav-status">
+    <span class="status-dot"></span>
+    <span class="status-text">DISPONIBLE</span>
+  </div>
+</nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-tag">&gt;_ étudiant BUT Informatique — Parcours <span class="accent">A - Réalisation d'applications</span></div>
+      <h1 class="hero-title">
+        <span>KHALIL</span>
+        <br/>
+        <span class="hero-lastname">BENDREF</span>
+      </h1>
+      <p class="hero-sub">
+        <span class="accent">Développeur en formation</span>, avec un vrai
+        attrait pour la <span class="accent">sécurité des systèmes
+        d'information</span>. J'aime autant construire des applications
+        que comprendre comment les protéger.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">Voir mes projets<span class="btn-arrow"> →</span></a>
+        <a href="#contact" class="btn-ghost">Me contacter</a>
+      </div>
+    </div>
+    <div class="hero-terminal">
+      <div class="terminal-bar">
+        <span class="t-dot red"></span>
+        <span class="t-dot yellow"></span>
+        <span class="t-dot green"></span>
+        <span class="t-title">Profil.java</span>
+      </div>
+      <div class="terminal-body code-body">
+        <p><span class="tk-kw">public class</span> <span class="tk-type">Profil</span> {</p>
+        <p class="indent"><span class="tk-type">String</span> nom = <span class="tk-str">"Khalil Bendref"</span>;</p>
+        <p class="indent"><span class="tk-type">String</span> formation = <span class="tk-str">"BUT Informatique"</span>;</p>
+        <p class="indent"><span class="tk-type">List</span>&lt;<span class="tk-type">String</span>&gt; interets = <span class="tk-type">List</span>.of(</p>
+        <p class="indent indent2"><span class="tk-str">"développement"</span>, <span class="tk-str">"cybersécurité"</span></p>
+        <p class="indent">);</p>
+        <p>}</p>
+        <p class="t-caret"><span class="cursor">█</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">À propos</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Étudiant en <span class="accent">BUT Informatique</span> à l'IUT2 de Grenoble,
+          je me forme au <span class="accent">développement d'applications</span> tout en
+          cultivant un vrai intérêt pour la sécurité des systèmes d'information.
+          Mon parcours mêle compétences techniques et vision stratégique héritée de ma formation en gestion.
+        </p>
+        <p>
+          Venu de STMG, j'ai découvert l'informatique tardivement mais avec
+une certitude : construire des applications et comprendre comment les
+systèmes fonctionnent — pour mieux les protéger — sont deux facettes
+d'une même logique qui me parle.
+
+Aujourd'hui, je me concentre sur le <span class="accent">développement
+Java/JavaFX</span> en conduite de projet, tout en gardant mes bases en
+<span class="accent">administration système Linux</span> et services
+réseau comme un terrain que je continue d'explorer.
+        </p>
+        <div class="about-details">
+          <div class="detail-item">
+            <span class="detail-label">Formation</span>
+            <span class="detail-value">BUT Informatique — IUT2 Grenoble</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Diplôme précédent</span>
+            <span class="detail-value">Bac STMG Gestion-Finance</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Objectif</span>
+            <span class="detail-value">Développement &amp; cybersécurité</span>
+          </div>
+          
+          <div class="detail-item">
+  <span class="detail-label">Langues</span>
+  <span class="detail-value">Français (natif) · Anglais (bilingue)</span>
+</div>
+
+          <div class="detail-item">
+            <span class="detail-label">Localisation</span>
+            <span class="detail-value">Grenoble, France</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-skills">
+        <div class="skills-block">
+          <h3 class="skills-cat"><span class="accent">// </span>Sécurité</h3>
+          <div class="skill-tags">
+            <span class="tag">Wireshark</span>
+            <span class="tag">TCP/IP</span>
+            <span class="tag">Analyse de trafic</span>
+          </div>
+        </div>
+        <div class="skills-block">
+          <h3 class="skills-cat"><span class="accent">// </span>Développement</h3>
+          <div class="skill-tags">
+            <span class="tag">Java</span>
+            <span class="tag">SQL / PostgreSQL</span>
+            <span class="tag">HTML/CSS/JS</span>
+            <span class="tag">Python</span>
+            <span class="tag">Assembleur M68k</span>
+          </div>
+        </div>
+        <div class="skills-block">
+          <h3 class="skills-cat"><span class="accent">// </span>Systèmes & Réseaux</h3>
+          <div class="skill-tags">
+            <span class="tag">Linux</span>
+            <span class="tag">Git</span>
+            <span class="tag">Debian</span>
+            <span class="tag">Virtualisation (VM)</span>
+            <span class="tag">Bash</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+   <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Projets</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="projects-intro">
+      Ensemble des projets réalisés durant mon BUT Informatique — du développement à l'administration de systèmes.
+    </p>
+    <div class="projects-grid">
+
+      <!-- PROJECT CARD 5 — Bivouacool (PHARE) -->
+      <article class="project-card featured" onclick="openProjectModal(5)">
+        <div class="card-header">
+          <div class="card-icon">⬡</div>
+          <div class="card-meta">
+            <span class="card-year">2025 — 2026</span>
+            <span class="card-type featured-badge">Projet phare</span>
+          </div>
+        </div>
+        <h3 class="card-title">Bivouacool</h3>
+        <p class="card-desc">
+          Application de bureau JavaFX pour la gestion de sorties de bivouac en montagne — un méga SAÉ développé sur quatre modules (R2.01, R2.02, R2.05, R2.06). Responsable technique d'une équipe de 5, du cadrage à la soutenance.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">Java</span>
+          <span class="ctag">JavaFX</span>
+          <span class="ctag">MVC</span>
+          <span class="ctag">UML</span>
+        </div>
+
+        <div class="card-meta-row">
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">5 pers.</span></span>
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">2 semaines</span></span>
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">R2.01</span></span>
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">R2.02</span></span>
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">R2.05</span></span>
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">R2.06</span></span>
+        </div>
+
+        <div class="card-skills">
+          <span class="card-skills-label">// Compétences mobilisées</span>
+          <div class="skills-row">
+            <a href="competences.html#c1" class="skill-badge" title="Réaliser un développement d'application" onclick="event.stopPropagation()">C1</a>
+            <a href="competences.html#c5" class="skill-badge" title="Conduire un projet" onclick="event.stopPropagation()">C5</a>
+            <a href="competences.html#c6" class="skill-badge" title="Travailler dans une équipe informatique" onclick="event.stopPropagation()">C6</a>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <span class="card-link">[ Voir le détail → ]</span>
+        </div>
+        <div class="card-glow"></div>
+      </article>
+
+      <!-- PROJECT CARD 1 — Chatbot culture générale -->
+       <article class="project-card" onclick="openProjectModal(1)">
+        <div class="card-header">
+          <div class="card-icon">⬡</div>
+          <div class="card-meta">
+            <span class="card-year">2024 — 2025</span>
+            <span class="card-type">DÉVELOPPEMENT</span>
+          </div>
+        </div>
+        <h3 class="card-title">Chatbot de culture générale</h3>
+        <p class="card-desc">
+          Créer un chatbot rapide et fiable basé sur un index et un thésaurus afin de répondre à des questions de culture générale, tout en optimisant la fiabilité des réponses et la vitesse de recherche.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">Java</span>
+          <span class="ctag">Index</span>
+          <span class="ctag">Dichotomie</span>
+          <span class="ctag">Thésaurus</span>
+        </div>
+
+        <div class="card-meta-row">
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">2 pers.</span></span>
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">1 semaine</span></span>
+        </div>
+
+        <div class="card-skills">
+          <span class="card-skills-label">// Compétences mobilisées</span>
+          <div class="skills-row">
+            <a href="competences.html#c1" class="skill-badge" title="Réaliser un développement d'application">C1</a>
+            <a href="competences.html#c2" class="skill-badge" title="Optimiser des applications informatiques">C2</a>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <span class="card-link">[ Voir le détail → ]</span>
+        </div>
+        <div class="card-glow"></div>
+      </article>
+
+      <!-- PROJECT CARD 2 — Site web Hardis Groupe -->
+      <article class="project-card" onclick="openProjectModal(2)">
+        <div class="card-header">
+          <div class="card-icon">⬡</div>
+          <div class="card-meta">
+            <span class="card-year">2024 — 2025</span>
+            <span class="card-type">DÉVELOPPEMENT WEB</span>
+          </div>
+        </div>
+        <h3 class="card-title">Site web institutionnel — Hardis Groupe</h3>
+        <p class="card-desc">
+          Création d'un site web complémentaire pour l'ESN Hardis Groupe, à destination des élèves de 3ème en recherche de stage. Réalisation de l'interface avec un effort de vulgarisation et de sobriété visuelle.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">HTML</span>
+          <span class="ctag">CSS</span>
+          <span class="ctag">JavaScript</span>
+        </div>
+
+        <div class="card-meta-row">
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">5 pers.</span></span>
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">1 mois</span></span>
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">SAE_S1.05/06</span></span>
+        </div>
+
+        <div class="card-skills">
+          <span class="card-skills-label">// Compétences mobilisées</span>
+          <div class="skills-row">
+            <a href="competences.html#c1" class="skill-badge" title="Réaliser un développement d'application" onclick="event.stopPropagation()">C1</a>
+<a href="competences.html#c5" class="skill-badge" title="Conduire un projet" onclick="event.stopPropagation()">C5</a>
+<a href="competences.html#c6" class="skill-badge" title="Travailler dans une équipe informatique" onclick="event.stopPropagation()">C6</a>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <span class="card-link">[ Voir le détail → ]</span>
+        </div>
+        <div class="card-glow"></div>
+      </article>
+
+      <!-- PROJECT CARD 3 — BDD Le Tourmentin -->
+      <article class="project-card" onclick="openProjectModal(3)">
+        <div class="card-header">
+          <div class="card-icon">⬡</div>
+          <div class="card-meta">
+            <span class="card-year">2024 — 2025</span>
+            <span class="card-type">BASE DE DONNÉES</span>
+          </div>
+        </div>
+        <h3 class="card-title">Base de données — Le Tourmentin</h3>
+        <p class="card-desc">
+          Conception et implémentation complète d'une base PostgreSQL pour une association d'activités maritimes : modélisation MCD/MLD, scripts SQL de création et de tests, requêtes avancées et modification du schéma.
+        </p>
+        <div class="card-tags">
+          <span class="ctag">PostgreSQL</span>
+          <span class="ctag">SQL</span>
+          <span class="ctag">MCD / MLD</span>
+        </div>
+
+        <div class="card-meta-row">
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">2 pers.</span></span>
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">3 semaines</span></span>
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">SAE_S1.04</span></span>
+        </div>
+
+        <div class="card-skills">
+          <span class="card-skills-label">// Compétences mobilisées</span>
+          <div class="skills-row">
+<a href="competences.html#c4" class="skill-badge" title="Gérer des données de l'information" onclick="event.stopPropagation()">C4</a>          </div>
+        </div>
+
+        <div class="card-footer">
+          <span class="card-link">[ Voir le détail → ]</span>
+        </div>
+        <div class="card-glow"></div>
+      </article>
+
+      <!-- PROJECT CARD 4 — Installation poste de développement -->
+      <article class="project-card" onclick="openProjectModal(4)">
+        <div class="card-header">
+          <div class="card-icon">⬡</div>
+          <div class="card-meta">
+            <span class="card-year">2024 — 2025</span>
+            <span class="card-type">SYSADMIN</span>
+          </div>
+        </div>
+        <h3 class="card-title">Installation d'un poste de développement</h3>
+        <p class="card-desc">
+          Mise en place d'une machine virtuelle sous Debian 13 avec KDE Plasma, installation d'un environnement de développement complet et déploiement d'IntelliJ IDEA via trois méthodes différentes (Snap, Flatpak, archive).
+        </p>
+        <div class="card-tags">
+          <span class="ctag">Debian 13</span>
+          <span class="ctag">VM</span>
+          <span class="ctag">KDE Plasma</span>
+          <span class="ctag">Snap / Flatpak</span>
+          <span class="ctag">JDK / Git</span>
+        </div>
+
+        <div class="card-meta-row">
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">SOLO</span></span>
+          <span class="meta-chip"><span class="meta-key">&gt;</span> <span class="meta-val">1 semaine</span></span>
+        </div>
+
+        <div class="card-skills">
+          <span class="card-skills-label">// Compétences mobilisées</span>
+          <div class="skills-row">
+<a href="competences.html#c3" class="skill-badge" title="Administrer des systèmes informatiques communicants complexes" onclick="event.stopPropagation()">C3</a>          </div>
+        </div>
+
+        <div class="card-footer">
+          <span class="card-link">[ Voir le détail → ]</span>
+        </div>
+        <div class="card-glow"></div>
+      </article>
+
+    </div>
+  </section>
+
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-text">
+        <p>Vous voulez discuter d'un projet, d'un stage ou simplement échanger ?</p>
+        <div class="contact-links">
+          <a href="#" class="contact-item" id="emailLink">
+  <span class="ci-icon">✉</span>
+  <span class="ci-label">Email institutionnel</span>
+  <span class="ci-value" id="emailDisplay">[email protégé — cliquez pour afficher]</span>
+</a>
+          <a href="https://github.com/kbnueve" target="_blank" class="contact-item">
+            <span class="ci-icon">⌥</span>
+            <span class="ci-label">GitHub</span>
+            <span class="ci-value">github.com/kbnueve</span>
+          </a>
+          <a href="https://linkedin.com/in/khalil-bendref-25b156413" target="_blank" class="contact-item">
+            <span class="ci-icon">◈</span>
+            <span class="ci-label">LinkedIn</span>
+            <span class="ci-value">linkedin.com/in/khalil-bendref-25b156413</span>
+          </a>
+        </div>
+      </div>
+     <form class="contact-form" id="contactForm" action="https://formspree.io/f/mykvalyw" method="POST">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Votre message…" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">
+          Envoyer<span class="btn-arrow"> →</span>
+        </button>
+        <!-- Intègre Formspree : action="https://formspree.io/f/[ton-id]" method="POST" -->
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-copy">© 2025 Khalil Bendref — Tous droits réservés</span>
+      <span class="footer-built">Conçu & développé par Khalil Bendref</span>
+    </div>
+  </footer>
+
+  
+
+
+<div class="modal-overlay" id="projectModal">
+  <div class="modal-window">
+    <div class="modal-titlebar">
+      <span class="tb-dot red" data-close-modal></span>
+      <span class="tb-dot yellow"></span>
+      <span class="tb-dot green"></span>
+      <span class="tb-title" id="modalFilePath">~/projets/projet.md</span>
+      <button class="tb-close" data-close-modal>[ X ] FERMER</button>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <!-- Le contenu est injecté dynamiquement par JS -->
+    </div>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
